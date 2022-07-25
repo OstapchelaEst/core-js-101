@@ -64,15 +64,7 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-  let result = n1 > n2 ? n2 : n1;
-  const stop = n1 < n2 ? n2 : n1;
-  let addValue = result;
-
-  while (true) {
-    addValue += 1;
-    result += addValue;
-    if (addValue === stop) return result;
-  }
+  return Array(n2 - n1 + 1).fill(n1).map((a, i) => a + i).reduce((a, b) => a + b);
 }
 
 
